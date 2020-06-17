@@ -2,35 +2,30 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import 'antd/dist/antd.css';
-import { Layout } from 'antd';
+import { Layout, Menu, Button } from 'antd';
 
 // import './App.css';
-import Headr from './components/header';
 import Home from './components/home';
 import Login from './components/login';
 import Signup from './components/signup';
 
-const { Sider, Header, Content, Footer } = Layout;
+const { Sider } = Layout;
 
 
 function App() {
   return (
     <div className="App">
       <Layout>
-        <Sider collapsible="true" defaultCollapsed="false">Sider Here</Sider>
-        <Layout>
-          <Header>
-            <Headr />
-          </Header>
-          <Content>
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/login" component={Login} />
-              <Route path="/signup" component={Signup} />
-            </Switch>
-          </Content>
-          <Footer>Minecraft server admin :)</Footer>
-        </Layout>
+        <Sider collapsible="true">
+        <Menu>
+          <Button type="primary">Menu icon here</Button>
+        </Menu>
+        </Sider>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/signup" component={Signup} />
+        </Switch>
       </Layout>
     </div>
   );
