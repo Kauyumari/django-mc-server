@@ -8,6 +8,8 @@ autopep8 = "*"
 
 [packages]
 django = "*"
+djangorestframework = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.7"
