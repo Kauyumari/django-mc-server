@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.http import HttpResponse
 
+from minecraft_process import views
+
 urlpatterns = [
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('command/', views.write)
 ]

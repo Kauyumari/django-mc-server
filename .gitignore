@@ -14,6 +14,7 @@
 /build
 
 # misc
+/.vscode
 .DS_Store
 .env.local
 .env.development.local
@@ -27,3 +28,14 @@ yarn-error.log*
 db.*
 __pycache__*
 *.pyc
+
+*.jar
+banned*.json
+ops.json
+server.properties
+usercache.json
+whitelist.json
+eula.txt
+db.sqlite3
+logs/
+world/
