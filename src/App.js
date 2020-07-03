@@ -2,25 +2,47 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import 'antd/dist/antd.css';
-import { Layout, Menu, Button } from 'antd';
+import { Layout, Menu, Button, Drawer, Affix } from 'antd';
 
 // import './App.css';
 import Home from './components/home';
 import Login from './components/login';
 import Signup from './components/signup';
+import { useState } from 'react';
 
 const { Sider } = Layout;
 
 
-function App() {
+const App = () => {
+  
+  const [visible, setVisible] = useState(false);
+
+  const showDrawer = () => {
+    setVisible(true);
+  };
+  const onClose = () => {
+    setVisible(false);
+  };
+
   return (
     <div className="App">
       <Layout>
-        <Sider collapsible="true">
+        <Affix offsetTop={10}>
+          <Button type="primary" onClick={showDrawer}>Menu icon here</Button>
+        </Affix>
+        <Drawer
+          title="drawer"
+          placement="left"
+          closable={false}
+          onClose={onClose}
+          visible={visible}
+        >
+          <p>Contents of the drawer here (menu)</p>
+        </Drawer>
         <Menu>
-          <Button type="primary">Menu icon here</Button>
         </Menu>
-        </Sider>
+        {/* <Sider collapsible="true">
+        </Sider> */}
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
@@ -29,6 +51,6 @@ function App() {
       </Layout>
     </div>
   );
-}
+};
 
 export default App;
