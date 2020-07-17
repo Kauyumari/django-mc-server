@@ -14,6 +14,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "download-server": "curl https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar --output minecraft_server2.jar",
     "server": "pipenv run python manage.py runserver",
     "build": "react-scripts build",
     "test": "react-scripts test",
