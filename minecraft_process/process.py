@@ -36,18 +36,25 @@ def wait_for_string(str_, stream, verbose=False):
             return
 
 
+def initialize():
+    proc = Popen(
+        process_args,
+        stdin=PIPE,
+        stdout=PIPE,
+        bufsize=1,
+        text=True
+    )
+    wait_for_string('Done', proc.stdout, True)
+    return proc
+
+
 class Minecraft_Process:
 
     def __init__(self):
+        with open('eula.txt', 'w') as eula:
+            eula.write('eula=true')
         if not is_port_in_use(25565):
-            self.MinecraftProcess = Popen(
-                process_args,
-                stdin=PIPE,
-                stdout=PIPE,
-                bufsize=1,
-                text=True
-            )
-            wait_for_string('Done', self.MinecraftProcess.stdout, True)
+            self.MinecraftProcess = initialize()
 
     def write(self, command, response):
         proc = self.MinecraftProcess
