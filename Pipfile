@@ -8,6 +8,11 @@ autopep8 = "*"
 
 [packages]
 django = "*"
+djangorestframework = "*"
+pylint = "*"
+djangorestframework-jwt = "*"
+mojangclient = {git = "git://github.com/techkid6/AccountsClientPython"}
+requests = "*"
 
 [requires]
 python_version = "3.7"
