@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "774804f4d617cbafb97e9c6fd9f13cca56dc76625d53cf4c87034eb8bb60cdc4"
+            "sha256": "82ec738e190543e5a309e8fa8d46c72d0a45eacb8176030ffbea5636c5231ad5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -30,6 +30,20 @@
             ],
             "version": "==2.4.2"
         },
+        "certifi": {
+            "hashes": [
+                "sha256:5930595817496dd21bb8dc35dad090f1c2cd0adfaf21204bf6732ca5d8ee34d3",
+                "sha256:8fc0819f1f30ba15bdb34cceffb9ef04d99f420f68eb75d901e9560b8749fc41"
+            ],
+            "version": "==2020.6.20"
+        },
+        "chardet": {
+            "hashes": [
+                "sha256:84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae",
+                "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
+            ],
+            "version": "==3.0.4"
+        },
         "django": {
             "hashes": [
                 "sha256:31a5fbbea5fc71c99e288ec0b2f00302a0a92c44b13ede80b73a6a4d6d205582",
@@ -45,6 +59,21 @@
             ],
             "index": "pypi",
             "version": "==3.11.0"
+        },
+        "djangorestframework-jwt": {
+            "hashes": [
+                "sha256:5efe33032f3a4518a300dc51a51c92145ad95fb6f4b272e5aa24701db67936a7",
+                "sha256:ab15dfbbe535eede8e2e53adaf52ef0cf018ee27dbfad10cbc4cbec2ab63d38c"
+            ],
+            "index": "pypi",
+            "version": "==1.11.0"
+        },
+        "idna": {
+            "hashes": [
+                "sha256:b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6",
+                "sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"
+            ],
+            "version": "==2.10"
         },
         "isort": {
             "hashes": [
@@ -86,6 +115,17 @@
             ],
             "version": "==0.6.1"
         },
+        "mojangclient": {
+            "git": "git://github.com/techkid6/AccountsClientPython",
+            "ref": "7f8286a17527489f9915d4328b488c4137ec771c"
+        },
+        "pyjwt": {
+            "hashes": [
+                "sha256:5c6eca3c2940464d106b99ba83b00c6add741c9becaec087fb7ccdefea71350e",
+                "sha256:8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96"
+            ],
+            "version": "==1.7.1"
+        },
         "pylint": {
             "hashes": [
                 "sha256:7dd78437f2d8d019717dbf287772d0b2dbdfd13fc016aa7faa08d67bccc46adc",
@@ -100,6 +140,14 @@
                 "sha256:c35965d010ce31b23eeb663ed3cc8c906275d6be1a34393a1d73a41febf4a048"
             ],
             "version": "==2020.1"
+        },
+        "requests": {
+            "hashes": [
+                "sha256:b3559a131db72c33ee969480840fff4bb6dd111de7dd27c8ee1f820f4f00231b",
+                "sha256:fe75cc94a9443b9246fc7049224f75604b113c36acb93f87b80ed42c44cbb898"
+            ],
+            "index": "pypi",
+            "version": "==2.24.0"
         },
         "six": {
             "hashes": [
@@ -148,6 +196,13 @@
             ],
             "markers": "implementation_name == 'cpython' and python_version < '3.8'",
             "version": "==1.4.1"
+        },
+        "urllib3": {
+            "hashes": [
+                "sha256:91056c15fa70756691db97756772bb1eb9678fa585d9184f24534b100dc60f4a",
+                "sha256:e7983572181f5e1522d9c98453462384ee92a0be7fac5f1413a1e35c56cc0461"
+            ],
+            "version": "==1.25.10"
         },
         "wrapt": {
             "hashes": [
