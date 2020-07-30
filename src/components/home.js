@@ -21,7 +21,6 @@ function Home() {
 
   //separate data for lists
   const usersOnline = userData;
-  const usersOffline = ["d"];
 
 
   return (
@@ -47,13 +46,6 @@ function Home() {
                     </List.Item>
                   )}
                 />
-              </div> : null
-            }
-            <Divider>Offline</Divider>
-            <Typography.Title level={4}>Offline Users</Typography.Title>
-            { usersOffline.length ?
-              <div>
-                <h4>There are {usersOffline.length} users offline</h4>
               </div> : null
             }
           </Content>

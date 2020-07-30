@@ -8,6 +8,7 @@ import { Layout, Menu, Button, Drawer, Affix } from 'antd';
 import Home from './components/home';
 import Login from './components/login';
 import Signup from './components/signup';
+import Settings from './components/settings';
 import { useState } from 'react';
 
 const { Sider } = Layout;
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/" exact component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
+          <Route path="/settings" component={Settings} />
         </Switch>
       </Layout>
     </div>

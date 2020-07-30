@@ -1,0 +1,217 @@
+---- Minecraft Crash Report ----
+// Everything's going to plan. No, really, that was supposed to happen.
+
+Time: 30/07/20 04:16 AM
+Description: Watching Server
+
+java.lang.Error
+	at bqb.a(SourceFile:251)
+	at bqd.a(SourceFile:128)
+	at bqb.d(SourceFile:246)
+	at bqb.d_(SourceFile:450)
+	at dfd.a(SourceFile:259)
+	at dfd.a(SourceFile:207)
+	at aom.a(SourceFile:893)
+	at aom.a(SourceFile:839)
+	at aom.f(SourceFile:800)
+	at aom.a(SourceFile:573)
+	at aoy.a(SourceFile:2142)
+	at aoy.f(SourceFile:2095)
+	at aoy.k(SourceFile:2544)
+	at aoz.k(SourceFile:538)
+	at aok.k(SourceFile:126)
+	at ayk.k(SourceFile:53)
+	at ayn.k(SourceFile:80)
+	at aoy.j(SourceFile:2251)
+	at aoz.j(SourceFile:338)
+	at zd.a(SourceFile:615)
+	at zd$$Lambda$3404/459695933.accept(Unknown Source)
+	at bqb.a(SourceFile:603)
+	at zd.a(SourceFile:405)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:873)
+	at yd.b(SourceFile:306)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:813)
+	at net.minecraft.server.MinecraftServer.v(SourceFile:672)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:256)
+	at net.minecraft.server.MinecraftServer$$Lambda$3025/629977452.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at bqb.a(SourceFile:251)
+	at bqd.a(SourceFile:128)
+	at bqb.d(SourceFile:246)
+	at bqb.d_(SourceFile:450)
+	at dfd.a(SourceFile:259)
+	at dfd.a(SourceFile:207)
+	at aom.a(SourceFile:893)
+	at aom.a(SourceFile:839)
+	at aom.f(SourceFile:800)
+	at aom.a(SourceFile:573)
+	at aoy.a(SourceFile:2142)
+	at aoy.f(SourceFile:2095)
+	at aoy.k(SourceFile:2544)
+	at aoz.k(SourceFile:538)
+	at aok.k(SourceFile:126)
+	at ayk.k(SourceFile:53)
+	at ayn.k(SourceFile:80)
+	at aoy.j(SourceFile:2251)
+	at aoz.j(SourceFile:338)
+	at zd.a(SourceFile:615)
+	at zd$$Lambda$3404/459695933.accept(Unknown Source)
+	at bqb.a(SourceFile:603)
+	at zd.a(SourceFile:405)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:873)
+	at yd.b(SourceFile:306)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:813)
+	at net.minecraft.server.MinecraftServer.v(SourceFile:672)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:256)
+
+-- Thread Dump --
+Details:
+	Threads: "Netty Server IO #2" Id=57 RUNNABLE
+	at sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	at sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:198)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:117)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@94890e9
+	-  locked java.util.Collections$UnmodifiableSet@78f7fb0
+	-  locked sun.nio.ch.KQueueSelectorImpl@3b0fb99
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:411)
+	...
+
+
+"Netty Server IO #1" Id=56 RUNNABLE
+	at sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	at sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:198)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:117)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@46b2758b
+	-  locked java.util.Collections$UnmodifiableSet@bb06a6c
+	-  locked sun.nio.ch.KQueueSelectorImpl@77bef655
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:411)
+	...
+
+
+"Server Watchdog" Id=30 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:454)
+	at yg.run(SourceFile:45)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Netty Server IO #0" Id=25 RUNNABLE
+	at sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	at sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:198)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:117)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@7356b708
+	-  locked java.util.Collections$UnmodifiableSet@269d8ac4
+	-  locked sun.nio.ch.KQueueSelectorImpl@2e767771
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:411)
+	...
+
+
+"ObjectCleanerThread" Id=24 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@2e7a30b4
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@2e7a30b4
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	at io.netty.util.internal.ObjectCleaner$1.run(ObjectCleaner.java:54)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Server console handler" Id=23 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	-  locked java.io.BufferedInputStream@68523c84
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	-  locked java.io.InputStreamReader@22d350e0
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	...
+
+
+"DestroyJavaVM" Id=22 RUNNABLE
+
+
+"Server thread" Id=19 RUNNABLE
+	at bqb.a(SourceFile:251)
+	at bqd.a(SourceFile:128)
+	at bqb.d(SourceFile:246)
+	at bqb.d_(SourceFile:450)
+	at dfd.a(SourceFile:259)
+	at dfd.a(SourceFile:207)
+	at aom.a(SourceFile:893)
+	at aom.a(SourceFile:839)
+	...
+
+
+"Snooper Timer" Id=20 WAITING on java.util.TaskQueue@3f036634
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@3f036634
+	at java.lang.Object.wait(Object.java:502)
+	at java.util.TimerThread.mainLoop(Timer.java:526)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Timer hack thread" Id=15 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at v$2.run(SourceFile:524)
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@40830ef0
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@40830ef0
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@39ccac78
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@39ccac78
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+
+
+Stacktrace:
+	at yg.run(SourceFile:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.1
+	Minecraft Version ID: 1.16.1
+	Operating System: Mac OS X (x86_64) version 10.14.6
+	Java Version: 1.8.0_144, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 593822776 bytes (566 MB) / 1035468800 bytes (987 MB) up to 1035468800 bytes (987 MB)
+	CPUs: 4
+	JVM Flags: 2 total; -Xmx1024M -Xms1024M
+	Player Count: 1 / 20; [ze['camcaro'/253, l='ServerLevel[world]', x=308.07, y=99.18, z=155.88]]
+	Data Packs: vanilla
+	Is Modded: Unknown (can't tell)
+	Type: Dedicated Server (map_server.txt)

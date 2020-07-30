@@ -1,0 +1,210 @@
+---- Minecraft Crash Report ----
+// This is a token for 1 free hug. Redeem at your nearest Mojangsta: [~~HUG~~]
+
+Time: 30/07/20 04:35 AM
+Description: Watching Server
+
+java.lang.Error
+	at java.util.stream.StreamOpFlag.fromCharacteristics(StreamOpFlag.java:733)
+	at java.util.stream.StreamSupport.stream(StreamSupport.java:70)
+	at java.util.Collection.stream(Collection.java:581)
+	at bps.c(SourceFile:68)
+	at bqc.c(SourceFile:88)
+	at aom.f(SourceFile:796)
+	at aom.a(SourceFile:573)
+	at aoy.a(SourceFile:2142)
+	at aoy.f(SourceFile:2095)
+	at aoy.k(SourceFile:2544)
+	at aoz.k(SourceFile:538)
+	at aok.k(SourceFile:126)
+	at ayk.k(SourceFile:53)
+	at aoy.j(SourceFile:2251)
+	at aoz.j(SourceFile:338)
+	at zd.a(SourceFile:615)
+	at zd$$Lambda$3407/1883606663.accept(Unknown Source)
+	at bqb.a(SourceFile:603)
+	at zd.a(SourceFile:405)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:873)
+	at yd.b(SourceFile:306)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:813)
+	at net.minecraft.server.MinecraftServer.v(SourceFile:672)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:256)
+	at net.minecraft.server.MinecraftServer$$Lambda$3026/2083966486.run(Unknown Source)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.util.stream.StreamOpFlag.fromCharacteristics(StreamOpFlag.java:733)
+	at java.util.stream.StreamSupport.stream(StreamSupport.java:70)
+	at java.util.Collection.stream(Collection.java:581)
+	at bps.c(SourceFile:68)
+	at bqc.c(SourceFile:88)
+	at aom.f(SourceFile:796)
+	at aom.a(SourceFile:573)
+	at aoy.a(SourceFile:2142)
+	at aoy.f(SourceFile:2095)
+	at aoy.k(SourceFile:2544)
+	at aoz.k(SourceFile:538)
+	at aok.k(SourceFile:126)
+	at ayk.k(SourceFile:53)
+	at aoy.j(SourceFile:2251)
+	at aoz.j(SourceFile:338)
+	at zd.a(SourceFile:615)
+	at zd$$Lambda$3407/1883606663.accept(Unknown Source)
+	at bqb.a(SourceFile:603)
+	at zd.a(SourceFile:405)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:873)
+	at yd.b(SourceFile:306)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:813)
+	at net.minecraft.server.MinecraftServer.v(SourceFile:672)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:256)
+
+-- Thread Dump --
+Details:
+	Threads: "Worker-Main-54" Id=78 TIMED_WAITING on java.util.concurrent.ForkJoinPool@33b097bd
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@33b097bd
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+
+
+"Worker-Main-52" Id=76 WAITING on java.util.concurrent.ForkJoinPool@33b097bd
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@33b097bd
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+
+
+"Netty Server IO #1" Id=31 RUNNABLE
+	at sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	at sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:198)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:117)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@3d777fbb
+	-  locked java.util.Collections$UnmodifiableSet@3948fccd
+	-  locked sun.nio.ch.KQueueSelectorImpl@7c4a7580
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:411)
+	...
+
+
+"Server Watchdog" Id=30 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:454)
+	at yg.run(SourceFile:45)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Netty Server IO #0" Id=25 RUNNABLE
+	at sun.nio.ch.KQueueArrayWrapper.kevent0(Native Method)
+	at sun.nio.ch.KQueueArrayWrapper.poll(KQueueArrayWrapper.java:198)
+	at sun.nio.ch.KQueueSelectorImpl.doSelect(KQueueSelectorImpl.java:117)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:86)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@4b7008cb
+	-  locked java.util.Collections$UnmodifiableSet@4d7c2cb9
+	-  locked sun.nio.ch.KQueueSelectorImpl@33ac0f4f
+	at sun.nio.ch.SelectorImpl.select(SelectorImpl.java:97)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:411)
+	...
+
+
+"ObjectCleanerThread" Id=24 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@1c658acf
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@1c658acf
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	at io.netty.util.internal.ObjectCleaner$1.run(ObjectCleaner.java:54)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"DestroyJavaVM" Id=23 RUNNABLE
+
+
+"Server console handler" Id=21 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	-  locked java.io.BufferedInputStream@5798ffd8
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	-  locked java.io.InputStreamReader@7bad0876
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	...
+
+
+"Server thread" Id=19 RUNNABLE
+	at java.util.stream.StreamOpFlag.fromCharacteristics(StreamOpFlag.java:733)
+	at java.util.stream.StreamSupport.stream(StreamSupport.java:70)
+	at java.util.Collection.stream(Collection.java:581)
+	at bps.c(SourceFile:68)
+	at bqc.c(SourceFile:88)
+	at aom.f(SourceFile:796)
+	at aom.a(SourceFile:573)
+	at aoy.a(SourceFile:2142)
+	...
+
+
+"Snooper Timer" Id=20 WAITING on java.util.TaskQueue@28a8a63b
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@28a8a63b
+	at java.lang.Object.wait(Object.java:502)
+	at java.util.TimerThread.mainLoop(Timer.java:526)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Timer hack thread" Id=15 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at v$2.run(SourceFile:524)
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@182b7213
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@182b7213
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@8dd28f1
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@8dd28f1
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+
+
+Stacktrace:
+	at yg.run(SourceFile:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.1
+	Minecraft Version ID: 1.16.1
+	Operating System: Mac OS X (x86_64) version 10.14.6
+	Java Version: 1.8.0_144, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 567857608 bytes (541 MB) / 1071120384 bytes (1021 MB) up to 1071120384 bytes (1021 MB)
+	CPUs: 4
+	JVM Flags: 2 total; -Xmx1024M -Xms1024M
+	Player Count: 1 / 20; [ze['camcaro'/239, l='ServerLevel[world]', x=308.07, y=99.18, z=155.88]]
+	Data Packs: vanilla
+	Is Modded: Unknown (can't tell)
+	Type: Dedicated Server (map_server.txt)
